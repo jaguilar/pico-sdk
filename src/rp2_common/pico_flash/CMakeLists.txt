@@ -7,6 +7,6 @@ target_sources(pico_flash INTERFACE
 target_include_directories(pico_flash_headers INTERFACE ${CMAKE_CURRENT_LIST_DIR}/include)
 
 # just include multicore headers, as we don't want to pull in the lib if it isn't pulled in already
-target_link_libraries(pico_flash INTERFACE pico_multicore_headers)
+target_link_libraries(pico_flash INTERFACE pico_multicore_headers hardware_exception)
 
-pico_mirrored_target_link_libraries(pico_flash INTERFACE pico_time hardware_sync hardware_exception)
+pico_mirrored_target_link_libraries(pico_flash INTERFACE pico_time hardware_sync)
